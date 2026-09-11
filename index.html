@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="csrf-token" content="__CSRF_TOKEN__" />
+  <title>HOF Certificate Editor · Certify</title>
+  <link rel="stylesheet" href="/styles.css?v=locked-hof-1" />
+  <script src="/app.js?v=locked-hof-1" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><button class="brand-mark" id="sidebar-toggle" type="button" aria-controls="sidebar"
+          aria-expanded="true" aria-label="Collapse sidebar" title="Collapse sidebar">C</button><span
+          class="brand-name">certify<span class="gold">.</span></span></div>
+      <nav aria-label="Main navigation">
+        <a class="nav-item active" href="#preview-section" title="Certificate preview"
+          aria-label="Certificate preview"><span aria-hidden="true">▣</span><span class="nav-label">Certificate
+            preview</span></a>
+        <a class="nav-item" href="#edit-certificate" title="Edit certificate" aria-label="Edit certificate"><span
+            aria-hidden="true">✎</span><span class="nav-label">Edit certificate</span></a>
+      </nav>
+      <div class="sidebar-foot"><span class="lock-symbol" aria-hidden="true">◆</span><span class="nav-label">HOF ·
+          Approved artwork</span></div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">PASSION VISTA · HALL OF FAME</p>
+          <h1>Certificate of Appreciation</h1>
+        </div><span class="locked-badge">◆ Locked template</span>
+      </header>
+      <section id="preview-section" class="preview-section" aria-labelledby="preview-heading">
+        <div class="section-title">
+          <h2 id="preview-heading">Live certificate preview</h2><span id="preview-status" role="status"
+            aria-live="polite">Loading template…</span>
+        </div>
+        <div class="preview-workspace">
+          <div id="certificate-stage" class="certificate-stage" role="img"
+            aria-label="Live Certificate of Appreciation preview" aria-busy="true">
+            <img id="locked-background" class="locked-background" alt="" draggable="false" />
+            <svg id="portrait-overlay" class="portrait-overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <clipPath id="portrait-clip">
+                  <ellipse id="portrait-circle" />
+                </clipPath>
+              </defs>
+              <image id="portrait-image" clip-path="url(#portrait-clip)" preserveAspectRatio="none" />
+            </svg>
+            <img id="dynamic-ink" class="dynamic-ink" alt="" draggable="false" />
+          </div>
+        </div>
+        <p class="preview-note">A4 portrait · Photo and identity fields update as you edit.</p>
+      </section>
+      <section id="edit-certificate" class="editor-panel" aria-labelledby="edit-heading">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">PERSONALIZE YOUR CERTIFICATE</p>
+            <h2 id="edit-heading">Edit certificate</h2>
+          </div><span class="field-count">5 editable fields</span>
+        </div>
+        <form id="certificate-form" novalidate>
+          <div class="photo-section">
+            <div><label class="field-label" for="profileImage">Profile photo *</label><input id="profileImage"
+                type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-help error-profileImage" />
+              <p id="photo-help" class="help">JPG, PNG or WEBP · Up to 10 MB and 25 megapixels. Your photo stays inside
+                the original gold circle.</p>
+              <p id="error-profileImage" class="field-error" aria-live="polite"></p>
+            </div>
+            <fieldset id="crop-controls" disabled>
+              <legend>Adjust photo</legend>
+              <div class="crop-layout"><svg id="crop-preview" viewBox="0 0 100 100" aria-label="Photo crop preview">
+                  <defs>
+                    <clipPath id="crop-clip">
+                      <circle cx="50" cy="50" r="50" />
+                    </clipPath>
+                  </defs>
+                  <image id="crop-image" clip-path="url(#crop-clip)" preserveAspectRatio="none" />
+                </svg>
+                <div class="crop-sliders"><label for="photo-zoom">Zoom <output
+                      id="zoom-value">1.0×</output></label><input id="photo-zoom" type="range" min="1" max="4"
+                    step="0.01" value="1" /><label for="photo-x">Horizontal position</label><input id="photo-x"
+                    type="range" min="-1" max="1" step="0.01" value="0" /><label for="photo-y">Vertical
+                    position</label><input id="photo-y" type="range" min="-1" max="1" step="0.01" value="0" /><button
+                    id="center-photo" class="text-button" type="button">Center photo</button></div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label for="recipientName">Recipient name *</label><input id="recipientName"
+                name="recipientName" maxlength="160" required placeholder="e.g. Hernán Simó" autocomplete="name"
+                aria-describedby="error-recipientName" />
+              <p id="error-recipientName" class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="field"><label for="designation">Designation *</label><input id="designation" name="designation"
+                maxlength="160" required placeholder="e.g. Digital Artist" autocomplete="organization-title"
+                aria-describedby="error-designation" />
+              <p id="error-designation" class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="field"><label for="identityLine">Name / designation / company line *</label><input
+                id="identityLine" name="identityLine" maxlength="160" required
+                placeholder="e.g. Hernán Simó Digital Art" aria-describedby="error-identityLine" />
+              <p id="error-identityLine" class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="field"><label for="issueDate">Issue date *</label><input id="issueDate" name="issueDate"
+                type="date" min="0001-01-01" max="9999-12-31" required aria-describedby="error-issueDate" />
+              <p id="error-issueDate" class="field-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="export-actions"><button id="reset-editor" class="button secondary" type="button">Reset</button>
+            <div class="download-actions"><button class="button primary" type="button" data-export="pdf"
+                disabled>Download PDF</button><button class="button secondary" type="button" data-export="png"
+                disabled>Download PNG · 300 DPI</button><button class="button secondary" type="button"
+                data-export="jpeg" disabled>Download JPEG · 300 DPI</button></div>
+          </div>
+          <p id="editor-message" class="editor-message" role="status" aria-live="polite">Complete all five fields to
+            download your certificate.</p>
+        </form>
+      </section>
+      <footer class="page-footer">Butler typeface by <a href="https://www.fabiandesmet.com/portfolio/butler-font/"
+          target="_blank" rel="noopener noreferrer">Fabian De Smet</a>.</footer>
+    </main>
+  </div>
+</body>
+
+</html>

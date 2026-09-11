@@ -1,0 +1,69 @@
+{
+  "id": "hof-appreciation-v1",
+  "version": 1,
+  "title": "Certificate of Appreciation",
+  "width": 595.2760009765625,
+  "height": 841.8900146484375,
+  "masterSha256": "c96dd221008e09aad54434796ec072e167682fc23203fc7bfbfc1a892e91df63",
+  "image": {
+    "x": 247.9955,
+    "y": 370.764,
+    "width": 98.5118,
+    "height": 98.4875
+  },
+  "fields": {
+    "recipientName": {
+      "x": 160,
+      "width": 275.2756,
+      "baseline": 500.3833,
+      "font": "name",
+      "fontSize": 20,
+      "minFontSize": 14,
+      "scaleX": 0.9211940636058572,
+      "color": "#323a41",
+      "uppercase": true
+    },
+    "designation": {
+      "x": 160,
+      "width": 275.2756,
+      "baseline": 527.5143,
+      "font": "body",
+      "fontSize": 10.346,
+      "minFontSize": 10.346,
+      "scaleX": 0.9463182209478511,
+      "color": "#1c1b17"
+    },
+    "identityLine": {
+      "x": 130,
+      "width": 335.2756,
+      "baseline": 539.0468,
+      "font": "body",
+      "fontSize": 10.346,
+      "minFontSize": 10.346,
+      "scaleX": 0.9414197655132603,
+      "color": "#1c1b17"
+    },
+    "issueDate": {
+      "x": 220,
+      "width": 155.2756,
+      "baseline": 624.0101,
+      "font": "date",
+      "fontSize": 9.5,
+      "minFontSize": 9.5,
+      "scaleX": 0.9780223170261173,
+      "color": "#2b2a29"
+    }
+  },
+  "defaults": {
+    "recipientName": "",
+    "designation": "",
+    "identityLine": "",
+    "issueDate": "2026-09-11",
+    "profileImage": ""
+  },
+  "fonts": {
+    "name": "Butler ExtraBold (2026 free edition)",
+    "body": "Noto Sans, width-adjusted fallback for Frutiger",
+    "date": "Butler Bold (2026 free edition)"
+  }
+}

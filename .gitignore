@@ -1,0 +1,19 @@
+# Local development tools and editor settings
+laragon-wamp-*.exe
+.vscode/
+
+# Laravel dependencies, runtime files, and local secrets
+backend/.env
+backend/vendor/
+backend/node_modules/
+backend/*.log
+backend/storage/logs/*.log
+backend/bootstrap/cache/*.php
+backend/.edge-drag-test/
+__pycache__/
+.pytest_cache/
+artifacts/
+resources/fonts/butler.zip
+resources/fonts/butler/
+hof-sample-preview.png
+hof-blank-preview.png
