@@ -1,4 +1,4 @@
-# Certify — Certificate issuance demo
+# Certify — Certificate issuance
 
 A polished front-end demonstration of an internal certificate console, inspired by the supplied blue-and-gold certificate reference. It is deliberately a **client-only demo**: records are kept in browser `localStorage`, and neither authorization nor storage is secure enough for real certificates.
 
